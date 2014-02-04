@@ -23,6 +23,14 @@ module.exports = function(grunt) {
       },
     },
 
+    tplcompile: {
+        build: {
+            files: {
+                "target/output/templates.js": ["jst/**/*.html"]
+            }
+        }
+    },
+
     // Before generating any new files, remove any previously-created files.
     clean: {
       tests: ['tmp'],

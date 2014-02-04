@@ -42,13 +42,15 @@ grunt.initConfig({
 ### Options
 
 #### options.compiler
-Type: `String`
+Choices: `underscore` `lodash` `plaintext`
 Default value: `'lodash '`
 
-Which compiler to use. As of v0.0.1, only lodash and underscore compilers are available.
+Which compiler to use. Note that only underscore is installed with `grunt-tplcompile`. To use lodash, you must manually
+install the lodash library.
 
 #### options.namespace
-Type: `String`
+Choices: `expanded`
+
 Default value: `'expanded'`
 
 How to manage namespaces. As of v0.0.1, only "expanded" is available.
@@ -101,3 +103,9 @@ Added masking to expanded namespace
 Added plaintext compiler
 Organized code a bit better
 More unit tests
+
+### 0.0.3
+
+Bug fixes
+Added working examples
+

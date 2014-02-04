@@ -12,11 +12,18 @@ exports.init = function(grunt) {
         return "['" + arr.join("']['") + "']";
     };
 
-    exports.get_string = function(filename, base) {
+    exports.get_string = function(filename, options) {
 
-        var ns_arr = this.get_array(filename, base);
+        options = options || {};
+
+        if ("mask" in options) {
+            filename = filename.replace(options['mask'], '');
+        }
+
+        var ns_arr = ("base" in options)? this.get_array(filename, options['base']) : this.get_array(filename);
+
         
-        var ns_str = ""
+        var ns_str = "";
 
         for (var ns_pos = 0; ns_pos < ns_arr.length-1; ns_pos++) {
             var parent_nsarr = ns_arr.slice(0,ns_pos+1);
@@ -28,6 +35,7 @@ exports.init = function(grunt) {
                 this.added_namespaces.push(parent_nsstr);
             }
         }
+        ns_str += 'this' + arr_to_str(ns_arr) + ' = ';
 
         return ns_str;
 

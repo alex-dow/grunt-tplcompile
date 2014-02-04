@@ -49,9 +49,21 @@ Which compiler to use. As of v0.0.1, only lodash and underscore compilers are av
 
 #### options.namespace
 Type: `String`
-Default value: `expanded`
+Default value: `'expanded'`
 
 How to manage namespaces. As of v0.0.1, only "expanded" is available.
+
+#### options.mask
+Type: `String`
+Default value: `''`
+
+Mask part of the filename before using it for namespace processing
+
+#### options.base
+Type: `String`
+Default value: `''`
+
+Base namespace
 
 ### Usage Examples
 
@@ -61,7 +73,8 @@ grunt.initConfig({
     underscore: {
         options: {
             compiler: "underscore",
-            namespace: "expanded"
+            namespace: "expanded",
+            mask: "src/templates/",
         },
         files: {
             'target/compiled_tpl': ['src/templates/**/*.html']
@@ -84,3 +97,7 @@ Initial commit.
 
 Fixed a bug with writing files.
 Added default values for namespace and compiler
+Added masking to expanded namespace
+Added plaintext compiler
+Organized code a bit better
+More unit tests

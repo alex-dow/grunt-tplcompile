@@ -19,7 +19,10 @@ module.exports = function(grunt) {
 
   grunt.registerMultiTask('tplcompile', 'Javascript Template Compiler', function() {
     // Merge task-specific and/or target-specific options with these defaults.
-    var options = this.options({});
+    var options = this.options({
+        "namespace": "expanded",
+        "compiler": "underscore"
+    });
 
     var fs = require('fs');
     var path = require('path');
@@ -46,7 +49,7 @@ module.exports = function(grunt) {
     this.files.forEach(function(fileobj) {
         
         fileobj.src.forEach(function(src_file) {
-            grunt.log.writeln("Processing " + src_file);
+            grunt.verbose.writeln("Processing " + src_file);
             var file_contents = fs.readFileSync(src_file).toString();
             var tpl_source = compiler.compile(file_contents);
             var nsstr = namespace.get_string(src_file);
@@ -63,11 +66,11 @@ module.exports = function(grunt) {
 
         mkdirp.sync(dirname, "0755");
 
-        grunt.log.writeln("Created " + dirname);
+        grunt.verbose.writeln("Created " + dirname);
 
-        fs.writeFile(fileobj.dest, dest_src);
+        fs.writeFileSync(fileobj.dest, dest_src);
         
-        grunt.verbose.writeln(dest_src);
+        console.log(dest_src);
     });
 
   });

@@ -1,7 +1,7 @@
 {
   "name": "grunt-tplcompile",
   "description": "Multipurpose Javascript Template Compiler",
-  "version": "0.0.1",
+  "version": "0.0.2b2b,
   "homepage": "https://github.com/v0idnull/grunt-tplcompile",
   "author": {
     "name": "v0idnull",
@@ -40,6 +40,7 @@
     "grunt": "~0.4.2"
   },
   "keywords": [
-    "gruntplugin"
+    "gruntplugin",
+    "jst"
   ]
 }

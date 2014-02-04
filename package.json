@@ -1,0 +1,45 @@
+{
+  "name": "grunt-tplcompile",
+  "description": "Multipurpose Javascript Template Compiler",
+  "version": "0.0.1",
+  "homepage": "https://github.com/v0idnull/grunt-tplcompile",
+  "author": {
+    "name": "v0idnull",
+    "email": "v0idnull@gmail.com",
+    "url": "http://psikon.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/v0idnull/grunt-tplcompile.git"
+  },
+  "bugs": {
+    "url": "https://github.com/v0idnull/grunt-tplcompile/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/v0idnull/grunt-tplcompile/blob/master/LICENSE-MIT"
+    }
+  ],
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "dependencies": {
+    "mkdirp": "0.3.5"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "~0.6.0",
+    "grunt-contrib-clean": "~0.4.0",
+    "grunt-contrib-nodeunit": "~0.2.0",
+    "grunt": "~0.4.2"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.2"
+  },
+  "keywords": [
+    "gruntplugin"
+  ]
+}

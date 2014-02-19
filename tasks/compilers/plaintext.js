@@ -1,0 +1,32 @@
+
+exports.init = function(grunt) {
+
+    grunt.log.writeln('Using underscore compiler');
+
+    var exports = {};
+  
+    var addslashes = function(str) 
+    {
+        // From: http://phpjs.org/functions
+        // +   original by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
+        // +   improved by: Ates Goral (http://magnetiq.com)
+        // +   improved by: marrtins
+        // +   improved by: Nate
+        // +   improved by: Onno Marsman
+        // +   input by: Denny Wardhana
+        // +   improved by: Brett Zamir (http://brett-zamir.me)
+        // +   improved by: Oskar Larsson Högfeldt (http://oskar-lh.name/)
+        // *     example 1: addslashes("kevin's birthday");
+        // *     returns 1: 'kevin\'s birthday'
+        return (str + '').replace(/[\\"']/g, '\\$&').replace(/\u0000/g, '\\0');
+    }
+
+ 
+    exports.compile = function(file_contents, options) {
+        return '"' + addslashes(file_contents).replace("\n"," \\ \n") + '";';
+
+    }
+    
+    return exports;
+};
+

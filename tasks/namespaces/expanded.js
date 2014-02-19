@@ -56,7 +56,7 @@ exports.init = function(grunt) {
         fnparts[fnparts.length-1] = fnparts[fnparts.length-1].split('.').slice(0,-1);
 
         if (typeof base == "string") {
-            fnparts.unshift(base);
+            fnparts = base.split('/').concat(fnparts); 
         } else if (typeof base == "array") {
             fnparts = base.concat(fnparts);
         }

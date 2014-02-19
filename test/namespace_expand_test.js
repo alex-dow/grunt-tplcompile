@@ -52,6 +52,20 @@ exports.namespace_expand = {
         test.done();
     },
 
+    'Test multilevel base namespace': function(test) {
+        var ns = require('../tasks/namespaces/expanded').init(grunt);
+        var filename = 'foo/bar.html';
+        var ns_str = ns.get_string(filename, {
+            base: 'level1/level2'
+        });
+
+        console.log(ns_str);
+
+        test.equal(ns_str, "this['level1'] = this['level1'] || {};\nthis['level1']['level2'] = this['level1']['level2'] || {};\nthis['level1']['level2']['foo'] = this['level1']['level2']['foo'] || {};\nthis['level1']['level2']['foo']['bar'] = ");
+        test.done();
+    },
+
+
     'Test masking': function(test) {
         var ns = require('../tasks/namespaces/expanded').init(grunt);
 

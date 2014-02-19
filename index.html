@@ -1,0 +1,28 @@
+<html>
+<head>
+<script type="text/javascript" src="target/output/templates.js"></script>
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+</head>
+<body>
+
+<div id="underscore-simple"></div>
+<div id="underscore-complex"></div>
+<div id="plaintext-simple"></div>
+
+<script type="text/javascript">
+
+$('#underscore-simple').html(templates['underscore']['simple']({
+    title: 'Underscore Simple Template'
+}));
+
+$('#underscore-complex').html(templates['underscore']['complex']({
+    title: 'Underscore Complex Template',
+    values: ['apple','orange','banana','pear']
+}));
+
+$('#plaintext-simple').html(templates['plaintext']['simple']);
+
+</script>
+</body>
+</html>

@@ -1,7 +1,7 @@
 {
   "name": "grunt-tplcompile",
   "description": "Multipurpose Javascript Template Compiler",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "homepage": "https://github.com/v0idnull/grunt-tplcompile",
   "author": {
     "name": "v0idnull",
